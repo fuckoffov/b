@@ -1,0 +1,300 @@
+:root{
+  --bg-dark:#000;                    
+  --glass-1: rgba(255,255,255,0.08);
+  --glass-2: rgba(255,255,255,0.20);
+  --neon1: #ffffff;                  
+  --neon2: #ffffff;
+  --accent:#ffffff;
+  --muted: rgba(255,255,255,0.35);
+  --soft: rgba(255,255,255,0.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Rubik", system-ui, sans-serif;
+  background: var(--bg-dark);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow:hidden;
+}
+
+/* bg */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    z-index: -1; 
+
+    opacity: 0.25; 
+    filter: blur(3px); 
+
+    pointer-events: none; 
+}
+
+
+
+.top-toggle{
+  position:fixed;right:28px;top:28px;z-index:40;
+  width:44px;height:44px;border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+  border:1px solid rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter: blur(8px);
+  cursor:pointer;
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+}
+.top-toggle .pulse{
+  color:#fff;
+  text-shadow: 0 6px 26px rgba(255,255,255,0.25);
+  transform:scale(1); transition:all .25s ease;
+}
+.top-toggle:hover .pulse{ transform:scale(1.06); }
+.close-menu {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.close-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.close-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.profile-wrap{
+  position:relative; z-index:10;
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  padding:60px 28px;
+}
+
+
+.card{
+  width:760px; max-width:92vw; border-radius:14px;
+  padding:48px 48px 56px; position:relative;
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+}
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-radius:18px;
+  overflow:hidden;
+  min-height:560px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.card-inner{
+  width:100%;
+  max-width:560px;
+  text-align:center;
+  position:relative;
+  padding:12px 8px;
+}
+
+
+.avatar{
+  width:120px;height:120px;border-radius:999px;margin:8px auto 10px;
+  padding:6px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  border:2px solid rgba(255,255,255,0.22);
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+}
+.avatar img{
+  width:100%;height:100%;object-fit:cover;border-radius:999px;
+}
+
+
+.nick{
+  font-family:"Unbounded", system-ui, sans-serif;
+  font-weight:700; font-size:34px;
+  margin:12px 0 6px;
+  letter-spacing:1px;
+  color:#fff;
+  text-shadow:0 6px 26px rgba(255,255,255,0.25);
+}
+
+
+.role-pills{
+  margin-top:18px;
+  margin-bottom:22px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+}
+.pill{
+  padding:8px 18px;
+  border-radius:18px;
+  font-size:14px;
+
+  border:1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.06)
+  );
+
+  backdrop-filter: blur(10px);
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+}
+
+
+.headline{
+  font-size:16px; font-weight:700;
+  margin-top:8px; color:#fff;
+}
+.subtitle{
+  color: rgba(255,255,255,0.45);
+  margin-top:8px; font-size:14px;
+  max-width:500px; margin-left:auto; margin-right:auto;
+}
+
+
+.socials{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-top:22px;
+}
+.socials .soc img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+}
+
+
+
+.mini-card{
+  margin-top:28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.18);
+  padding:14px 18px;
+  border-radius:12px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+}
+.mini-left{ display:flex; align-items:center; gap:12px; }
+.mini-avatar{
+  width:56px;height:56px;border-radius:999px;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.22);
+}
+
+.mini-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.mini-name {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.mini-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1px;
+    margin-left: -15px;   
+    line-height: 1.05;
+}
+
+
+
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 12px 40px rgba(255,255,255,0.20);
+  cursor: pointer;
+}
+
+/* hover */
+.soc {
+  position: relative;
+}
+
+.soc:hover .social-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+
+.social-tooltip {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+
+  background: rgba(20, 20, 20, 0.95);
+  color: rgba(255,255,255,0.75);
+
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+}
+
+
+.soc:hover .social-tooltip {
+  opacity: 1;
+  transform: translate(-50%, -120%) scale(1);
+}
+
+.social-tooltip i {
+  font-style: normal;
+  opacity: 0.6;
+}
